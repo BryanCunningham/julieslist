@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'slim'
+gem 'bcrypt-ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
