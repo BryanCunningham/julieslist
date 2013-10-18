@@ -26,8 +26,9 @@ body
   position: relative
   -webkit-font-smoothing: antialiased
   opacity: 1
-  letter-spacing: 1.8
-  +animation (load 1s)
+  letter-spacing: 1.5
+  line-height: 1
+  +animation (load .7s)
 
 +keyframes (load)
   0%
@@ -87,6 +88,7 @@ header
     color: $yellow
 
     &:hover
+      background: transparent
       color: $orange
 
 .logo h1
@@ -103,12 +105,12 @@ header
   margin: auto
 
   h2
-    margin: 7px 0 0 0
+    margin: 10px 0 0 0
     font-size: 20px
 
 nav
   +clearfix
-  width: 357px
+  width: 312px
   margin: 15px auto 0
 
   ul
@@ -182,9 +184,9 @@ nav
   background: rgba($yellow, .3)
   text-align: center
 
-  h4
+  h3
     position: relative
-    top: 72px
+    top: 80px
     color: white
 
 .content
