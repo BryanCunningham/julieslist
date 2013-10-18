@@ -1,7 +1,7 @@
 @import bourbon/bourbon
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700)
 @import mixins
-+font-face (entypo, 'entypo', $asset-pipeline: true)
++font-face (entypo, 'entypo')
 
 
 $dark: #3d3d3d
@@ -39,6 +39,9 @@ body
   margin: auto
   +clearfix
 
+h2, h3, h4
+  margin: 30px 0
+
 h1
   font-size: 2.5em
 
@@ -57,11 +60,34 @@ h5
 p
   font-size: 1em
 
+a
+  text-decoration: none
+
+button
+  +rounded
+  background: $yellow
+  border: none
+  color: white
+  padding: 15px
+
+  &:hover
+    background: $orange
+
 header
   width: 100%
   padding: 30px
   background: white
   +clearfix
+
+.user
+  float: right
+
+  a
+    margin: 0 30px 0 0
+    color: $yellow
+
+    &:hover
+      color: $orange
 
 .logo h1
   +hide-text
@@ -93,11 +119,15 @@ nav
   li
     margin: 0 25px 0 0
     float: left
-    border-bottom: 2px dotted $orange
+    border-bottom: 2px dotted $yellow
     line-height: 1.3
+    cursor: pointer
 
     &:last-child
       margin: 0
+
+    &:hover
+      border-bottom: 2px dotted $orange
 
 .hero-image, .hero-overlay
   +size(100% 400px)
@@ -105,10 +135,38 @@ nav
   +clearfix
   +rounded
 
-.hero-image
+.hero1, .hero2, .hero3
+  +size(100% 400px)
+  position: absolute
+  +animation (fade 12s linear infinite)
+  opacity: 0
+
+.hero1
   background: url("hero-image.jpg") no-repeat
   background-size: cover
-  background-position: 50% 50%
+  +animation-delay(8s)
+  background-position: 0 50%
+
+.hero2
+  background: url("hero2.jpg") no-repeat
+  background-size: cover
+  +animation-delay(4s)
+  background-position: 0 50%
+
+.hero3
+  background: url("hero3.jpg") no-repeat
+  background-size: cover
+  background-position: 0 50%
+
++keyframes (fade)
+  0%
+    opacity: 0
+  7%
+    opacity: 1
+  33%
+    opacity: 1
+  40%
+    opacity: 0
 
 .hero-overlay
   position: relative
@@ -130,21 +188,38 @@ nav
     color: white
 
 .content
-  margin: 30px 0
+  margin: 0 0 30px 0
   color: $dark
   text-align: center
+  +clearfix
 
 .feature
   +rounded
   float: left
   width: 32.66%
   margin: 0 1% 0 0
+  padding: 15px
   background: $orange
+  position: relative
 
   &:last-child
     margin: 0
 
-i::before
+i
+  text-align: center
   font-family: "entypo"
   color: white
-  content: '\E724'
+  font-style: normal
+  font-size: 120px
+
+.discover, .share, .fun
+  color: white
+
+  h3
+    margin-top: -10px
+
+.signup-headline
+  text-align: center
+
+.signup
+  margin: 0 0 30px 0
