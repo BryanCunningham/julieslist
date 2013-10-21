@@ -1,5 +1,8 @@
 JuliesList::Application.routes.draw do
+  resources :ideas
+
   resources :users
+  get '/signin' => "users#show"
   get '/signup' => "users#new"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
