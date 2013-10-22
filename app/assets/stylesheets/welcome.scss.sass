@@ -65,6 +65,10 @@ p
 a
   text-decoration: none
 
+  &:hover
+    color: $dark
+    background: transparent
+
 button
   +rounded
   background: $yellow
@@ -90,11 +94,15 @@ header
   float: right
 
   a
+    margin: 0 15px 0 0
     color: $yellow
 
+    &:last-child
+      margin: 0
 
     &:hover
-      color: $yellow
+      background: transparent
+      color: $orange
 
 .logo h1
   +hide-text
@@ -233,17 +241,30 @@ i
   margin: 0 0 30px 0
   width: 25%
 
+  a
+    color: $dark
+
   &:hover
+    color: $dark
     background: darken($yellow, 3%)
 
 .form-container
-  text-align: center
   +rounded
+  color: white
+  text-align: center
   width: 600px
   padding: 30px
-  border: 2px dashed $orange
+  background: $orange
   margin: 0 auto 30px
 
+  .form-label
+    font-size: 20px
+
   input
-    background: $yellow
+    +rounded
+    background: rgba(white, .5)
     padding: 5px
+    margin: 5px 0 0 0
+
+    &:focus
+      outline: none

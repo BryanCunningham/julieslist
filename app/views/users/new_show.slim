@@ -1,0 +1,7 @@
+p#notice = notice
+.wrapper
+  .user
+    p Welcome to Julie's List  #{@user.first_name}
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', welcome_index_path

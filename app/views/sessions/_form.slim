@@ -1,10 +1,10 @@
 = form_for(:session, url: sessions_path) do |f|
   .field
-    = f.label :email
+    = f.label :email, :class => "form-label"
     br
     = f.text_field :email
   .field
-    = f.label :password
+    = f.label :password, :class => "form-label"
     br
     = f.password_field :password
   .field
