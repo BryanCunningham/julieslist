@@ -88,7 +88,7 @@ header
   background: white
   +clearfix
 
-.user
+.user-nav
   position: relative
   top: 18px
   float: right
@@ -103,6 +103,9 @@ header
     &:hover
       background: transparent
       color: $orange
+
+.user
+  float: left
 
 .logo h1
   +hide-text
@@ -123,7 +126,7 @@ header
 
 nav
   +clearfix
-  width: 312px
+  width: 284px
   margin: 15px auto 0
 
   ul
@@ -144,6 +147,9 @@ nav
 
     &:hover
       border-bottom: 2px dotted $orange
+
+.active
+  font-size: 1.25em
 
 .hero-image, .hero-overlay
   +size(100% 400px)

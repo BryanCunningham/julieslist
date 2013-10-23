@@ -1,5 +1,5 @@
 header
-  .user
+  .user-nav
     = link_to 'Sign Up', signup_path
     = link_to 'Sign In', signin_path
 
@@ -9,8 +9,12 @@ header
       h2 J L
     nav
       ul
-        li Spring
-        li Summer
-        li Autumn
-        li Winter
+        li
+          = link_to "Spring", spring_path
+        li
+          = link_to "Summer", summer_path
+        li
+          = link_to "Fall", fall_path
+        li
+          = link_to "Winter", winter_path
 

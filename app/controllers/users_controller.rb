@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  layout "user"
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  layout "user"
+  # end
   # GET /users
   # GET /users.json
   def index
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        sign_in @user
         format.html { render :new_show, notice: 'Your account was created successfully!' }
         format.json { render action: 'show', status: :created, location: @user }
       else
@@ -72,5 +73,9 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def signed_in_user
+    redirect_to signin_path, notice: "Please sign in." unless signed_in?
   end
 end

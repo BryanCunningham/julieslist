@@ -4,7 +4,13 @@ JuliesList::Application.routes.draw do
   resources :users
   get '/signin' => "sessions#new"
   get '/signup' => "users#new"
+  get '/sign_out' => 'sessions#destroy'
+  get '/spring' => "static_pages#spring"
+  get '/summer' => "static_pages#summer"
+  get '/fall' => "static_pages#fall"
+  get '/winter' => "static_pages#winter"
   get "welcome/index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

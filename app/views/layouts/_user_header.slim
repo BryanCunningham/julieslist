@@ -1,13 +1,20 @@
 header
   .user
-    = link_to 'LogOut', welcome_index_path
+    - if @user
+      h3 Hi, #{@user.first_name}
+      .log-out
+        = link_to 'LogOut', session_path, method: "delete"
   .wrapper
     .logo
       h1 Julie's List
       h2 J L
     nav
       ul
-        li Spring
-        li Summer
-        li Autumn
-        li Winter
+        li
+          = link_to "Spring", spring_path
+        li
+          = link_to "Summer", summer_path
+        li
+          = link_to "Fall", fall_path
+        li
+          = link_to "Winter", winter_path
