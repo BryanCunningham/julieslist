@@ -1,7 +1,7 @@
 @import bourbon/bourbon
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700)
-@import mixins
 +font-face (entypo, 'entypo')
+@import mixins
 
 
 $dark: #3d3d3d
@@ -29,17 +29,19 @@ body
   opacity: 1
   letter-spacing: 1.5
   line-height: 1
-  +animation (load .7s)
-
-+keyframes (load)
-  0%
-    opacity: 0
 
 .wrapper
   max-width: 960px
   width: 96%
   margin: auto
   +clearfix
+
+.yeild
+  +animation (load .5s)
+
++keyframes (load)
+  0%
+    opacity: 0
 
 h2, h3, h4
   margin: 30px 0
@@ -63,6 +65,7 @@ p
   font-size: 1em
 
 a
+  color: lighten($dark, 5%)
   text-decoration: none
 
   &:hover
@@ -88,9 +91,12 @@ header
   background: white
   +clearfix
 
+.admin-ideas
+  float: left
+
 .user-nav
   position: relative
-  top: 18px
+  top: 20px
   float: right
 
   a
@@ -104,8 +110,21 @@ header
       background: transparent
       color: $orange
 
+.user-info
+  float: right
+
+  h5
+    margin: 0
+
 .user
   float: left
+
+.logo-wrapper
+  float: left
+  background: $orange
+  width: 316px
+  border-radius: 30px 3px 3px 30px
+  +clearfix
 
 .logo h1
   +hide-text
@@ -124,9 +143,19 @@ header
     margin: 10px 0 0 0
     font-size: 20px
 
+  &.no-user
+    float: left
+
+.no-user-headline
+  float: left
+
+  h1
+    color: white
+    margin: 5px 0 0 15px
+
 nav
   +clearfix
-  width: 284px
+  width: 308px
   margin: 15px auto 0
 
   ul
@@ -147,9 +176,6 @@ nav
 
     &:hover
       border-bottom: 2px dotted $orange
-
-.active
-  font-size: 1.25em
 
 .hero-image, .hero-overlay
   +size(100% 400px)
@@ -274,3 +300,5 @@ i
 
     &:focus
       outline: none
+
+

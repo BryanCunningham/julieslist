@@ -2,14 +2,14 @@ JuliesList::Application.routes.draw do
   resources :ideas
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  resources :plans
   get '/signin' => "sessions#new"
   get '/signup' => "users#new"
-  get '/sign_out' => 'sessions#destroy'
-  get '/spring' => "static_pages#spring"
-  get '/summer' => "static_pages#summer"
-  get '/fall' => "static_pages#fall"
-  get '/winter' => "static_pages#winter"
+  get '/activity' => "ideas#new"
+  delete '/sign_out' => 'sessions#destroy'
+  get '/plan' => 'plans#index'
   get "welcome/index"
+  get '/:season' => 'ideas#seasoned_ideas', as: "seasoned_ideas"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

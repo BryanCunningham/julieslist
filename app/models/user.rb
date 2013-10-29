@@ -1,14 +1,15 @@
 require "securerandom"
 class User < ActiveRecord::Base
     before_save { self.email = email.downcase }
-    # attr_accessor :name, :email
+    before_create :create_remember_token
     validates :first_name, :last_name, presence: true
     validates :email, presence: true,
               uniqueness: { case_sensitive: false }
     has_secure_password
     validates :password, length: { minimum: 6 }
+    has_many :plans
+    has_many :ideas, through: :plans
 
-    before_create :create_remember_token
 
   def self.new_remember_token
     SecureRandom.urlsafe_base64

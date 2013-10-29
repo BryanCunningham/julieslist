@@ -1,20 +1,23 @@
 header
-  .user
-    - if @user
-      h3 Hi, #{@user.first_name}
-      .log-out
-        = link_to 'LogOut', session_path, method: "delete"
   .wrapper
+    .admin-ideas
+      - if current_user.admin?
+        = link_to "Add Activity", activity_path
+    .user-info
+      h5 Hi, #{current_user.first_name}
+      .log-out
+        h5
+          = link_to 'LogOut', sign_out_path, method: "delete"
     .logo
       h1 Julie's List
       h2 J L
     nav
       ul
         li
-          = link_to "Spring", spring_path
+          = link_to "Spring", seasoned_ideas_path("spring")
         li
-          = link_to "Summer", summer_path
+          = link_to "Summer", seasoned_ideas_path("summer")
         li
-          = link_to "Fall", fall_path
+          = link_to "Fall", seasoned_ideas_path("fall")
         li
-          = link_to "Winter", winter_path
+          = link_to "Winter", seasoned_ideas_path("winter")

@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022194243) do
+ActiveRecord::Schema.define(version: 20131025180717) do
 
   create_table "ideas", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
     t.string   "description"
+    t.string   "season"
+    t.string   "loaction"
+    t.date     "date"
+  end
+
+  create_table "plans", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -28,6 +38,7 @@ ActiveRecord::Schema.define(version: 20131022194243) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "remember_token"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

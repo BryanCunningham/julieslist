@@ -15,5 +15,17 @@
     = f.label :description
     br
     = f.text_field :description
+    .field
+    = f.label :location
+    br
+    = f.text_field :location
+    .field
+    = f.label :date
+    br
+    = f.text_field :date
+  .field
+    = f.label :season
+    br
+    = f.select :season, options_for_select([["Spring", "spring"], ["Summer", "summer"], ["Fall", "fall"], ["Winter", "winter"]])
   .field
     = f.submit :class => "signup"

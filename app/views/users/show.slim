@@ -1,1 +1,8 @@
 h1 User show
+
+ul
+- @user.plans.each do |plan|
+  li class="idea_#{plan.idea.id}"
+    h3= plan.idea.title
+    p= plan.idea.description
+

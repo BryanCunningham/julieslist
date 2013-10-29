@@ -1,20 +1,23 @@
 header
-  .user-nav
-    = link_to 'Sign Up', signup_path
-    = link_to 'Sign In', signin_path
 
   .wrapper
-    .logo
-      h1 Julie's List
-      h2 J L
-    nav
-      ul
-        li
-          = link_to "Spring", spring_path
-        li
-          = link_to "Summer", summer_path
-        li
-          = link_to "Fall", fall_path
-        li
-          = link_to "Winter", winter_path
+    .logo-wrapper
+      .logo.no-user
+        h2 J L
+      .no-user-headline
+        h1 Julie's List
+    .user-nav
+      = link_to 'Sign Up', signup_path
+      = link_to 'Sign In', signin_path
+
+    / nav
+    /   ul
+    /     li
+    /       = link_to "Spring", seasoned_ideas_path("spring")
+    /     li
+    /       = link_to "Summer", seasoned_ideas_path("summer")
+    /     li
+    /       = link_to "Fall", seasoned_ideas_path("fall")
+    /     li
+    /       = link_to "Winter", seasoned_ideas_path("winter")
 

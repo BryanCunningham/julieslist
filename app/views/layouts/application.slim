@@ -6,8 +6,15 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    = render "layouts/header"
+    - if current_user
+      = render "layouts/user_header"
+    - else
+      = render "layouts/header"
     .wrapper
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          .flash-message
+            = msg
       = yield
     = render "layouts/footer"
 

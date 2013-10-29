@@ -1,0 +1,1 @@
+$(".idea_<%= @idea_id %>").remove()

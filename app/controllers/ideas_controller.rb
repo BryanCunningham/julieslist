@@ -21,6 +21,10 @@ class IdeasController < ApplicationController
   def edit
   end
 
+  def seasoned_ideas
+    @ideas = Idea.where(season: params[:season]);
+    render action: 'index'
+  end
   # POST /ideas
   # POST /ideas.json
   def create
@@ -28,11 +32,9 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @idea }
+        format.html { redirect_to "/#{idea_params[:season]}", notice: 'Idea was successfully created.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +45,8 @@ class IdeasController < ApplicationController
     respond_to do |format|
       if @idea.update(idea_params)
         format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,10 +54,10 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1
   # DELETE /ideas/1.json
   def destroy
+    @idea_id = @idea.id
     @idea.destroy
     respond_to do |format|
-      format.html { redirect_to ideas_url }
-      format.json { head :no_content }
+      format.js { render layout: false}
     end
   end
 
@@ -69,6 +69,6 @@ class IdeasController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def idea_params
-    params.require(:idea).permit(:title, :description)
+    params.require(:idea).permit(:title, :description, :season)
   end
 end
