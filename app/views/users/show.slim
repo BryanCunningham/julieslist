@@ -5,4 +5,5 @@ ul
   li class="idea_#{plan.idea.id}"
     h3= plan.idea.title
     p= plan.idea.description
+    = link_to 'Delete', plan.idea, method: :delete, confirm: 'Are you sure?', remote: true
 

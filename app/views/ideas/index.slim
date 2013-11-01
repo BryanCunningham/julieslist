@@ -6,7 +6,6 @@
         = idea.description
         = link_to "Add to my plans", plans_path(idea_id: idea.id), :method => 'post'
         - if current_user.admin?
-          = link_to 'Show', idea
           = link_to 'Edit', edit_idea_path(idea)
           = link_to 'Destroy', idea, method: :delete, confirm: 'Are you sure?', remote: true
 br

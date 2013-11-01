@@ -4,6 +4,7 @@ html
     title Julie's List
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = yield :javascript
     = csrf_meta_tags
   body
     - if current_user
