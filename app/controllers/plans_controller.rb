@@ -18,9 +18,10 @@ class PlansController < ApplicationController
   end
 
   def destroy
-   @plan_id = @plan.id
-   @plan.destroy
-   respond_to do |format|
-    format.js { render layout: false}
+    @plan_id = @plan.id
+    @plan.destroy
+    respond_to do |format|
+      format.js { render layout: false}
+    end
   end
 end
