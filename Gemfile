@@ -40,6 +40,7 @@ group :development do
   gem 'pry-rails'
   gem 'pry'
   gem 'pry-debugger'
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password
