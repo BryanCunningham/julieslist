@@ -3,6 +3,7 @@ JuliesList::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :plans
+  delete '/destroy_plans' => 'plans#destroy', as: 'remove_plans'
   get '/signin' => "sessions#new"
   get '/signup' => "users#new"
   get '/activity' => "ideas#new"

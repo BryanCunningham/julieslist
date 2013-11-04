@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025180717) do
+ActiveRecord::Schema.define(version: 20131104200613) do
 
   create_table "ideas", force: true do |t|
     t.datetime "created_at"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131025180717) do
     t.string   "title"
     t.string   "description"
     t.string   "season"
-    t.string   "loaction"
+    t.string   "location"
     t.date     "date"
   end
 
