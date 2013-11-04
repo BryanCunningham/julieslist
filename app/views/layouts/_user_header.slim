@@ -7,7 +7,7 @@ header
       h5 Hi, #{current_user.first_name}
       .log-out
         h5
-          = link_to 'LogOut', sign_out_path, method: "delete"
+          | Would you like to #{link_to 'LogOut?', sign_out_path, method: "delete"}
     .logo
       h1 Julie's List
       h2 J L
